@@ -1,13 +1,14 @@
 version: "3.9"
+
 services:
   backend:
-    build: .
+    image: vijaykumar133/vijaykumar133/cicd-app:latest
+   # CI/CD will push this
     ports:
-    - "5000:5000"
+      - "5000:5000"
     env_file: .env
     depends_on:
-    - mongo
-
+      - mongo
 
   mongo:
     image: mongo:6
@@ -16,3 +17,6 @@ services:
       MONGO_INITDB_DATABASE: ${DB_NAME}
     ports:
       - "27017:27017"
+
+volumes:
+  mongo_data:
