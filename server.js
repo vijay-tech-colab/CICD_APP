@@ -19,9 +19,7 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-app.use((req,res) => {
-  console.log(Date.now());
-})
+
 // Routes
 app.get("/", (req, res) => {
   res.json({
